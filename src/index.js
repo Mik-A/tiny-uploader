@@ -5,6 +5,8 @@ import React from 'react'
     handleFile(file:File):void;
 */
 const UploadTextFile = (props) => {
+ const { fileUploadHandler, updateFileName } = props;
+
   const suppress = (evt) => {
     evt.stopPropagation()
     evt.preventDefault()
@@ -18,8 +20,12 @@ const UploadTextFile = (props) => {
   const onChangeHandler = async (event) => {
     var file = event.target.files[0]
     let text = await file.text()
-    props.fileUploadHandler(text)
-    props.updateFileName(file)
+    if(fileUploadHandler) {
+    fileUploadHandler(text)
+    }
+    if(updateFileName) {
+    updateFileName(file)
+    }
   }
   return (
     <div
