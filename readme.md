@@ -13,11 +13,11 @@ Works with most common text documents such as .txt and .md
 ```jsx
 import UploadeTextFile from '@mik-a/tiny-uploader'
 
-<UploadTextFile fileUploadHandler={fileUploadHandler} fileInfo={fileInfoHandler} label='Upload' className='my-custom-class' />
+<UploadTextFile fileContentHandler={fileContentHandler} fileInfo={fileInfoHandler} label='Upload' className='my-custom-class' />
 
 // Example of functions
 
-  const fileUploadHandler = e => {
+  const fileContentHandler = e => {
     console.log('text content: ', e)
   }
 
@@ -29,7 +29,7 @@ import UploadeTextFile from '@mik-a/tiny-uploader'
 ```
 ## Props
 
-`fileUploadHandler` // function()
+`fileContentHandler` // function()
 
 `FileInfo` // function()
 
